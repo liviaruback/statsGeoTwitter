@@ -8,7 +8,7 @@ def getJSON(filePathAndName):
     with open(filePathAndName, 'r') as fp:
         return json.load(fp)
  
-filename = "/Volumes/Spinach/flickr data/marielletweets/vereadoraMarielleFranco20180314.json"
+filename = "FILENAME"
     
 tweets = []
 count = 0
@@ -35,7 +35,6 @@ for line in file:
         countcoordinates = countcoordinates+1
     if tweet['user']['location'] != '':
         countuserLocation = countuserLocation+1
-        #print ('achou geo')
     if count < 100:
         print(tweet['user']['location']) 
         print('---------------------')
