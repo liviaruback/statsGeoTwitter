@@ -22,19 +22,18 @@ file = open(filename, 'r')
 # Tempo total para varrer todos, sem o append no dict: 1 minuto
 # Tempo total para varrer todos, testando o geo:  minutos
 for line in file:
-    count = count+1
-    if (count % 50000 == 0):
-        print(count, time.strftime("%Y_%m_%d %H_%M"))
+    count += 1
+    if (count % 50000 == 0): print(count, time.strftime("%Y_%m_%d %H_%M"))
     tweet = json.loads(line)
     #tweets.append(tweet)
-    if tweet['geo'] != None:
-        countgeo = countgeo+1
-    if tweet['place'] != None:
-        countplaces = countplaces+1
-    if tweet['coordinates'] != None:
-        countcoordinates = countcoordinates+1
-    if tweet['user']['location'] != '':
-        countuserLocation = countuserLocation+1
+    if tweet['geo']:
+        countgeo += 1
+    if tweet['place']:
+        countplaces += 1
+    if tweet['coordinates']:
+        countcoordinates += 1
+    if tweet['user']['location']:
+        countuserLocation =+= 1
     if count < 100:
         print(tweet['user']['location']) 
         print('---------------------')
